@@ -1,0 +1,8 @@
+mixin menuItem(liClass, linkClass, link, content)
+    li.menu-item(class= liClass)
+        a.menu-link(class= linkClass, href= link)= content
+
+mixin listItemWithPic(liClass, linkClass, link, imgClass, src, alt)
+    li.menu-item(class= liClass)
+        a.menu-link(class= linkClass, href= link)
+            img(class= imgClass, src= src, alt= alt )

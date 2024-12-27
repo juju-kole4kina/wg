@@ -1,0 +1,182 @@
+@use '../../globals/variables' as vars;
+@use "../../globals/animations";
+
+.burger {
+  will-change: transform;
+  display: none;
+  width: 68px;
+  height: 68px;
+  margin: 20px 20px 0 0;
+  position: absolute;
+  transform: scale(1);
+  user-select: none;
+  top: 0;
+  right: 0;
+
+  &__main {
+    position: absolute;
+    padding: 20px 16px;
+    height: 68px;
+    width: 68px;
+  }
+
+  &__inner {
+    position: relative;
+    height: 28px;
+    width: 36px;
+  }
+}
+
+.burger-inner {
+  span {
+    position: absolute;
+    display: block;
+    height: 4px;
+    width: 36px;
+    border-radius: 2px;
+    background: vars.$title-color;
+  }
+
+  &__top {
+    will-change: transform-origin;
+    top: 0;
+    transform-origin: 34px 2px;
+  }
+
+  &__bot {
+    will-change: transform-origin;
+    bottom: 0;
+    transform-origin: 34px 2px;
+  }
+
+  &__mid {
+    top: 12px;
+  }
+}
+
+.svg-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 68px;
+  height: 68px;
+
+  &__circle {
+    width: 68px;
+    height: 68px;
+  }
+
+  &__path {
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
+    stroke-linejoin: round;
+  }
+}
+
+.path-burger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 68px;
+  width: 68px;
+  mask: url("#mask");
+  -webkit-mask-box-image: url("http://dev.awsm.in/codepen/mask.svg");
+
+  &__animate-path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 68px;
+    height: 68px;
+  }
+
+  &__path-rotation {
+    will-change: transform, transform-origin;
+    height: 34px;
+    width: 34px;
+    margin: 34px 34px 0 0;
+    transform: rotate(0deg);
+    transform-origin: 100% 0;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 34px;
+      margin: 0 4px 0 0;
+      background: vars.$title-color;
+    }
+  }
+}
+
+.burger.open {
+  .svg-main__path {
+    will-change: animation;
+    animation: dash-in .6s linear normal;
+    animation-fill-mode: forwards;
+  }
+
+  .burger-inner__top {
+    will-change: animation;
+    animation: close-top-out .6s linear normal;
+    animation-fill-mode: forwards;
+  }
+
+  .burger-inner__bot {
+    will-change: animation;
+    animation: close-bot-out .6s linear normal;
+    animation-fill-mode: forwards;
+  }
+
+  .burger-inner__mid {
+    will-change: animation;
+    animation: burger-fill-out .6s linear normal;
+    animation-fill-mode: forwards;
+  }
+
+  .path-burger__animate-path {
+    will-change: animation;
+    animation: circle-in .6s linear normal;
+    animation-fill-mode: forwards;
+  }
+}
+
+.burger.closed {
+  .svg-main__path {
+    will-change: animation;
+    animation: dash-out .6s linear normal;
+    animation-fill-mode: forwards;
+  }
+
+  .burger-inner__top {
+    will-change: animation;
+    animation: close-top-in .6s linear normal;
+    animation-fill-mode: forwards;
+  }
+
+  .burger-inner__bot {
+    will-change: animation;
+    animation: close-bot-in .6s linear normal;
+    animation-fill-mode: forwards;
+  }
+
+  .burger-inner__mid {
+    will-change: animation;
+    animation: burger-fill-in .6s linear normal;
+  }
+
+  .path-burger__animate-path {
+    will-change: animation;
+    animation: circle-out .6s linear normal;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media (width <= 850px) {
+  .burger {
+    display: block;
+    z-index: 111;
+  }
+}
+
+

@@ -1,0 +1,22 @@
+-
+    var menuContent = [
+        {'liClass': 'header-menu__item', 'linkClass': 'header-menu__link hover-light-text', 'link': '#', 'content': 'О нас'},
+        {'liClass': 'header-menu__item', 'linkClass': 'header-menu__link hover-light-text', 'link': '#', 'content': 'Каталог'},
+        {'liClass': 'header-menu__item', 'linkClass': 'header-menu__link hover-light-text', 'link': '#', 'content': 'Доставка и оплата'},
+        {'liClass': 'header-menu__item', 'linkClass': 'header-menu__link hover-light-text', 'link': '#', 'content': 'Отзывы'},
+        {'liClass': 'header-menu__item', 'linkClass': 'header-menu__link hover-light-text', 'link': '#', 'content': 'Оставить заявку'},
+        {'liClass': 'header-menu__item', 'linkClass': 'header-menu__link hover-light-text', 'link': '#', 'content': 'Контакты'}
+    ]
+
+header.header
+    .header__container(class="container")
+        nav.header__menu(class="header-menu")
+            ul.header-menu__menu-list
+                include ../menu-item/menu-item
+                each item in menuContent
+                    +menuItem(item.liClass, item.linkClass, item.link, item.content)
+                +listItemWithPic('header-menu__item logo', 'header-menu__link', '#', 'logo__logo-image', "./images/icons/logo.svg", "Логотип 'Wood Games. Игры из дерева. Калининград'")
+
+        include ../burger/burger
+        +burger-btn("header__burger-btn closed")
+        a.header__phone-link(class="hover-light-text" href='tel:+7962398174') +7 (906) 239-81-74

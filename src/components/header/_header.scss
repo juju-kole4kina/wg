@@ -1,0 +1,142 @@
+@use "../../globals/variables" as vars;
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  position: absolute;
+  width: 100%;
+
+
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__phone-link {
+    margin: 0 10px 0 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    &:before {
+      content: url("./images/icons/phone-fill-header.svg");
+      margin-right: 5px;
+    }
+  }
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 auto;
+  flex-grow: 1;
+
+  &__menu-list {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+}
+
+@for $i from 1 through 7 {
+  .header-menu {
+    &__item:nth-child(#{$i}):not(:nth-child(7)) {
+      order: $i + 1;
+    }
+  }
+}
+
+.logo {
+  width: 100px;
+  order: 4;
+
+  &__logo-image {
+    width: 100%;
+  }
+}
+
+@media (width <= 1200px){
+  .header {
+    &__phone-link {
+      display: none;
+    }
+  }
+}
+
+@media (width <= 850px) {
+  .logo {
+    display: none;
+  }
+
+  .header.menu-open {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0 0 0 / 50%);
+
+    .header-menu {
+      right: 0;
+      &__item {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
+
+  .header {
+    //overflow: hidden;
+    &__logo {
+      display: none;
+    }
+  }
+
+  .header-menu {
+    will-change: transform;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 35vw;
+    background: vars.$first-bg;
+    box-shadow: 0 4px 24px 0 rgb(0 0 0 / 20%);
+
+    //transform: translateX(100%);
+
+    transition: .3s;
+
+    &__menu-list {
+      flex-direction: column;
+    }
+
+    &__item {
+      will-change: transform, opacity;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all .4s ease-out;
+    }
+
+    @for $i from 1 through 6 {
+      .header-menu {
+        &__item:nth-child(#{$i}) {
+          transition-delay: $i * .1s;
+        }
+      }
+    }
+  }
+}
+
+@media (width <= 700px){
+  .header-menu {
+    width: 50vw;
+  }
+}
+
+@media (width <= 500px){
+  .header-menu {
+    width: 100vw;
+  }
+}

@@ -1,0 +1,13 @@
+mixin burger-btn (className)
+    .burger(class= className)
+        .burger__main
+            .burger__inner(class="burger-inner")
+                span.burger-inner__top
+                span.burger-inner__mid
+                span.burger-inner__bot
+        .burger__svg-main(class="svg-main")
+            svg.svg-main__circle
+                path.svg-main__path(fill="none" stroke="#a0855b" stroke-miterlimit="10" viewBox="0 0 68 68" stroke-width="4" d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2")
+        .burger__path-burger(class="path-burger")
+            .path-burger__animate-path
+                .path-burger__path-rotation

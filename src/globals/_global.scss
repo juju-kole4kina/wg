@@ -1,0 +1,49 @@
+@use "../globals/variables" as vars;
+
+
+
+.default-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: vars.$ff;
+  color: vars.$light-text-color;
+  font-size: vars.$text-m-fs;
+  font-weight: 400;
+  line-height: 1.2;
+  position: relative;
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  align-items: center;
+}
+
+.main {
+  flex: 1;
+}
+
+.hover-light-text {
+  color: vars.$light-text-color;
+  transition: color .5s;
+  &:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    //margin-top: -3px;
+    background-color: vars.$hover-color;
+    transition: width .3s, background-color .5s;
+  }
+  &:hover{
+    color: vars.$hover-color;
+    transition: color .5s;
+    &:after{
+      width: 100%;
+      color: vars.$hover-color;
+    }
+  }
+
+
+}

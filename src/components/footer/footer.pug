@@ -1,0 +1,47 @@
+-
+    var menuContent = [
+        {'liClass': 'footer-menu__item', 'linkClass': 'footer-menu__link hover-light-text', 'link': '#', 'content': 'О нас'},
+        {'liClass': 'footer-menu__item', 'linkClass': 'footer-menu__link hover-light-text', 'link': '#', 'content': 'Каталог'},
+        {'liClass': 'footer-menu__item', 'linkClass': 'footer-menu__link hover-light-text', 'link': '#', 'content': 'Доставка и оплата'},
+        {'liClass': 'footer-menu__item', 'linkClass': 'footer-menu__link hover-light-text', 'link': '#', 'content': 'Отзывы'},
+        {'liClass': 'footer-menu__item', 'linkClass': 'footer-menu__link hover-light-text', 'link': '#', 'content': 'Оставить заявку'}
+    ]
+
+-
+    var contactsContent = [
+        {'liClass': 'contacts__item', 'linkClass': 'contacts__link hover-light-text', 'link': 'tel:+79062398174', 'content': '+7 (906) 239-81-74'},
+        {'liClass': 'contacts__item', 'linkClass': 'contacts__link hover-light-text', 'link': 'mailto:wg.kld39@mail.ru', 'content': 'wg.kld39@mail.ru'}
+    ]
+-
+    var socialsContent = [
+        {'liClass': 'socials__item', 'linkClass': 'socials__link', 'link': '#', 'imgClass': 'socials__image', 'src': './images/icons/vk.svg', 'alt': 'ВКонтакте'},
+        {'liClass': 'socials__item', 'linkClass': 'socials__link', 'link': '#', 'imgClass': 'socials__image', 'src': './images/icons/telegram.svg', 'alt': 'Telegram'},
+        {'liClass': 'socials__item', 'linkClass': 'socials__link', 'link': '#', 'imgClass': 'socials__image', 'src': './images/icons/instagram-circle.svg', 'alt': 'Instagram'}
+    ]
+footer.footer
+    .footer__container(class='container')
+        .footer__col
+            a.footer__logo
+                img.footer__logo-image(src="./images/icons/logo.svg" alt="Логотип 'Wood Games. Игры из дерева. Калининград'")
+            p.footer__copyright © 2024, Wood Games Калининград
+        .footer__col
+            h3.footer__col-title Разделы
+            ul.footer__menu(class="footer-menu")
+                include ../menu-item/menu-item
+                each item in menuContent
+                    +menuItem(item.liClass, item.linkClass, item.link, item.content)
+
+        .footer__col
+            .footer__row
+                h3.footer__col-title Контакты
+                ul.footer__contacts(class="contacts")
+                    include ../menu-item/menu-item
+                    each item in contactsContent
+                        +menuItem(item.liClass, item.linkClass, item.link, item.content)
+            .footer__row
+                h3.footer__col-title Мы в социальных сетях
+                ul.footer__socials(class="socials")
+                    include ../menu-item/menu-item
+                    each item in socialsContent
+                        +listItemWithPic(item.liClass, item.linkClass, item.link, item.imgClass, item.src, item.alt)
+                p.footer__socials-footnote *Компания Meta, которой пренадлежит Instagram, признана экстремистской и запрещена на территории РФ

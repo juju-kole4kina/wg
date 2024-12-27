@@ -1,0 +1,44 @@
+@use '../../globals/variables' as vars;
+.footer {
+  background: vars.$second-bg;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  &__logo {
+    display: block;
+    width: 281px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    &:not(:nth-child(1)) {
+      gap: 28px;
+    }
+  }
+
+  &__col-title {
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
