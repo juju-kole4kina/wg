@@ -72,7 +72,7 @@ function js() {
 }
 
 function images() {
-    return gulp.src('src/images/**/*.{jpg,png,svg,gif,ico,webp}')
+    return gulp.src(['src/images/**/*.{jpg,png,svg,gif,ico,webp}'], { encoding: false })
         .pipe(gulp.dest('dist/images'))
         .pipe(browserSync.reload({ stream: true }))
 }
