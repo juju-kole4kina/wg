@@ -8,8 +8,6 @@
   max-height: 750px;
   background-color: vars.$overflow-color ;
   z-index: -1;
-
-
   position: relative;
   &__overlow {
     position: absolute;
@@ -27,5 +25,6 @@
     justify-content: center;
     align-items: center;
     z-index: 555;
+    margin: 0 10px;
   }
 }

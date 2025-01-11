@@ -1,14 +1,16 @@
 @use "../../globals/variables" as vars;
 
 .main-title {
-  font-size: clamp(6.25rem, 5.3571rem + 4.4643vw, 9.375rem);
+  font-size: clamp(3.125rem, 1.3393rem + 8.9286vw, 9.375rem);
   color: vars.$title-color;
   font-family: vars.$title-ff;
+  text-align: center;
 }
 
 .main-subtitle {
   color: vars.$title-color;
-  font-size: clamp(1.875rem, 1.6964rem + 0.8929vw, 2.5rem);
+  font-size: clamp(1.25rem, 0.8929rem + 1.7857vw, 2.5rem);
+  text-align: center;
 }
 
 .section-title {
