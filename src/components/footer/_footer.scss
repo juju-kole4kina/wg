@@ -3,23 +3,35 @@
   background: vars.$second-bg;
   display: flex;
   justify-content: center;
-  padding-top: 60px;
+  padding: 60px 0 60px 0;
 
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: start;
+    margin: 0 20px;
   }
 
   &__logo {
-    display: block;
-    width: 281px;
+    display: flex;
+    max-width: 281px;
+  }
+
+  &__logo-image {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  &__copyright {
+    //font-size: 16px;
   }
 
   &__col {
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 30px;
+    margin: 0 20px 30px 20px;
+    //max-width: 33.333%;
     &:not(:nth-child(1)) {
       gap: 28px;
     }
@@ -27,18 +39,97 @@
 
   &__col-title {
     font-weight: 500;
-    font-size: 24px;
+    font-size: clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);
   }
 
   &__row {
     display: flex;
     flex-direction: column;
     gap: 24px;
+
   }
+
+  &__col-content {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+  }
+
+
 }
 
 .footer-menu {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  &__item {
+    display: flex;
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &__item {
+    display: flex;
+    align-items: center;
+    &:nth-child(1):before {
+      content: url("./images/icons/phone-fill.svg");
+      margin-right: 3px;
+  }
+
+    &:nth-child(2):before {
+      content: url("./images/icons/email-solid.svg");
+      margin-right: 3px;
+    }
+  }
+}
+
+.footer-socials-block {
+  display: flex;
+  flex-wrap: wrap;
+  &__socials-footnote {
+    font-size: 8px;
+    line-height: 12px;
+    width: 130px;
+    opacity: .2;
+  }
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 970px) {
+  .footer {
+    align-items: center;
+    padding: 40px 0 0 0;
+    &__col {
+      &:nth-child(1) {
+        order: 3;
+      }
+    }
+    .container {
+      //flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
+  }
+}
+
+@media (max-width: 627px) {
+  .footer {
+    &__col {
+      width: 60%;
+    }
+  }
+  .footer-socials-block {
+    &__socials-footnote {
+      width: 100%;
+    }
+  }
 }

@@ -40,8 +40,9 @@ footer.footer
                         +menuItem(item.liClass, item.linkClass, item.link, item.content)
             .footer__row
                 h3.footer__col-title Мы в социальных сетях
-                ul.footer__socials(class="socials")
-                    include ../menu-item/menu-item
-                    each item in socialsContent
-                        +listItemWithPic(item.liClass, item.linkClass, item.link, item.imgClass, item.src, item.alt)
-                p.footer__socials-footnote *Компания Meta, которой пренадлежит Instagram, признана экстремистской и запрещена на территории РФ
+                .footer__col-content(class="footer-socials-block")
+                    ul.footer-socials-block__socials(class="socials")
+                        include ../menu-item/menu-item
+                        each item in socialsContent
+                            +listItemWithPic(item.liClass, item.linkClass, item.link, item.imgClass, item.src, item.alt)
+                    p.footer-socials-block__socials-footnote *Компания Meta, которой пренадлежит Instagram, признана экстремистской и запрещена на территории РФ
