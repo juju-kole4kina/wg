@@ -138,5 +138,8 @@
 @media (width <= 500px){
   .header-menu {
     width: 100vw;
+    &__link {
+      color: vars.$dark-text-color;
+    }
   }
 }
