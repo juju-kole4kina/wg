@@ -25,7 +25,8 @@ footer.footer
                 img.footer__logo-image(src="./images/icons/logo.svg" alt="Логотип 'Wood Games. Игры из дерева. Калининград'")
             p.footer__copyright © 2024, Wood Games Калининград
         .footer__col
-            h3.footer__col-title Разделы
+            include ../titles/titles
+            +footerListTitle("footer__col-title", "Разделы")
             ul.footer__menu(class="footer-menu")
                 include ../menu-item/menu-item
                 each item in menuContent
@@ -33,13 +34,15 @@ footer.footer
 
         .footer__col
             .footer__row
-                h3.footer__col-title Контакты
+                include ../titles/titles
+                +footerListTitle("footer__col-title", "Контакты")
                 ul.footer__contacts(class="contacts")
                     include ../menu-item/menu-item
                     each item in contactsContent
                         +menuItem(item.liClass, item.linkClass, item.link, item.content)
             .footer__row
-                h3.footer__col-title Мы в социальных сетях
+                include ../titles/titles
+                +footerListTitle("footer__col-title", "Мы в социальных сетях")
                 .footer__col-content(class="footer-socials-block")
                     ul.footer-socials-block__socials(class="socials")
                         include ../menu-item/menu-item

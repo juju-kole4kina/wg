@@ -1,0 +1,26 @@
+@use "../../globals/variables" as vars;
+
+.main-title {
+  font-size: clamp(6.25rem, 5.3571rem + 4.4643vw, 9.375rem);
+  color: vars.$title-color;
+  font-family: vars.$title-ff;
+}
+
+.main-subtitle {
+  color: vars.$title-color;
+  font-size: clamp(1.875rem, 1.6964rem + 0.8929vw, 2.5rem);
+}
+
+.section-title {
+  font-size: clamp(1.875rem, 1.6964rem + 0.8929vw, 2.5rem);
+  margin-bottom: 52px;
+  font-weight: 500;
+  &_type_light {
+    color: vars.$light-text-color;
+  }
+}
+
+.footer-title {
+  font-weight: 500;
+  font-size: clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);
+}
