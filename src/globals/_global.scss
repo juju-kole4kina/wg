@@ -46,3 +46,13 @@
   }
 }
 
+.theme{
+  &_light {
+    background-color: vars.$first-bg;
+    color: vars.$dark-text-color;
+  }
+  &_dark {
+    background-color: vars.$second-bg;
+    color: vars.$light-text-color;
+  }
+}
