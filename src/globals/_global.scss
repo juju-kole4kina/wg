@@ -47,9 +47,22 @@
 }
 
 .theme{
+
   &_light {
     background-color: vars.$first-bg;
     color: vars.$dark-text-color;
+    position: relative;
+    &:before {
+      content: '';
+      background: url("./images/bg/Purty-Wood.jpg");
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      opacity: .2;
+    }
   }
   &_dark {
     background-color: vars.$second-bg;
