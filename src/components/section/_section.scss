@@ -1,0 +1,11 @@
+.section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+@media (max-width: 1440px) {
+  .section {
+    padding: 4vw 0;
+  }
+}
