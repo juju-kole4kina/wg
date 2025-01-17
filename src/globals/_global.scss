@@ -18,6 +18,8 @@
   max-width: 1440px;
   width: 100%;
   align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
 .main {
@@ -61,7 +63,8 @@
       width: 100%;
       top: 0;
       left: 0;
-      opacity: .2;
+      opacity: .3;
+      z-index: 1;
     }
   }
   &_dark {

@@ -15,7 +15,8 @@
 
 .section-title {
   font-size: clamp(1.875rem, 1.6964rem + 0.8929vw, 2.5rem);
-  margin-bottom: 52px;
+  //margin-bottom: 52px;
+  margin-bottom: 3vw;
   font-weight: 500;
   &_type_light {
     color: vars.$light-text-color;
