@@ -1,0 +1,21 @@
+-
+    var meetingsList = [
+        { "title": "Свадьбы", "image": "./images/meetings/1.jpg", "alt": "Свадьбы" },
+        { "title": "Дни рождения", "image": "./images/meetings/2.jpg", "alt": "Дни рождения" },
+        { "title": "Выставки", "image": "./images/meetings/3.jpg", "alt": "Выставки" },
+        { "title": "Детские праздники", "image": "./images/meetings/4.jpg", "alt": "Детские праздники" },
+        { "title": "Городские события", "image": "./images/meetings/5.jpg", "alt": "Городские события" },
+        { "title": "Корпоративы", "image": "./images/meetings/6.jpg", "alt": "Корпоративы" }
+    ];
+
+section.main__meetings(class="section meetings theme_dark")
+    .meetings__container(class="container")
+        include ../titles/titles
+        +sectionTitle("meetings__title", "Наши игры идеально подойдут для")
+
+        ul.meetings__meetings-list
+            include ../list-items/list-items
+            each item in meetingsList
+                +meetingsListItem(item.title, item.image, item.alt)
+
+        p.meetings__text А также презентаций, семинаров, конференций, welcome-зон, выпускных, BTL-акций, тимбилдингов и тд
