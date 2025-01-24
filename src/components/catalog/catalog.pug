@@ -1,0 +1,48 @@
+-
+    var catalogListItems = [
+        {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
+        {"image": "./images/catalog/balance-tower.jpg", "title": "Башня баланса"},
+        {"image": "./images/catalog/kornhole.jpg", "title": "Корнхол"},
+        {"image": "./images/catalog/nasharu.jpg", "title": "Нашару"},
+        {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
+        {"image": "./images/catalog/balance-tower.jpg", "title": "Башня баланса"},
+        {"image": "./images/catalog/kornhole.jpg", "title": "Корнхол"},
+        {"image": "./images/catalog/nasharu.jpg", "title": "Нашару"},
+        {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
+        {"image": "./images/catalog/balance-tower.jpg", "title": "Башня баланса"},
+        {"image": "./images/catalog/kornhole.jpg", "title": "Корнхол"},
+        {"image": "./images/catalog/nasharu.jpg", "title": "Нашару"},
+        {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
+        {"image": "./images/catalog/balance-tower.jpg", "title": "Башня баланса"},
+        {"image": "./images/catalog/kornhole.jpg", "title": "Корнхол"},
+        {"image": "./images/catalog/nasharu.jpg", "title": "Нашару"},
+        {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
+        {"image": "./images/catalog/balance-tower.jpg", "title": "Башня баланса"},
+        {"image": "./images/catalog/kornhole.jpg", "title": "Корнхол"},
+        {"image": "./images/catalog/nasharu.jpg", "title": "Нашару"},
+        {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
+        {"image": "./images/catalog/balance-tower.jpg", "title": "Башня баланса"},
+        {"image": "./images/catalog/kornhole.jpg", "title": "Корнхол"},
+        {"image": "./images/catalog/nasharu.jpg", "title": "Нашару"},
+        {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
+        {"image": "./images/catalog/balance-tower.jpg", "title": "Башня баланса"},
+        {"image": "./images/catalog/kornhole.jpg", "title": "Корнхол"},
+        {"image": "./images/catalog/nasharu.jpg", "title": "Нашару"},
+        {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
+        {"image": "./images/catalog/balance-tower.jpg", "title": "Башня баланса"}
+    ];
+
+section.main__catalog(class="catalog section theme_light")
+    .catalog__container(class="container")
+        include ../titles/titles
+        +sectionTitle("catalog__title", "Наши игры")
+
+        .catalog__catalog-wrapper(class="slider")
+            button.slider__btn(class="slider__btn_prev" id="prev")
+                span.slider__btn_icon
+            ul.slider__carousel
+                include ../list-items/list-items
+                each item in catalogListItems
+                    +catalogListItem(item.title, item.image)
+            button.slider__btn(class="slider__btn_next" id="next")
+                span.slider__btn_icon

@@ -189,7 +189,6 @@
 
 }
 
-
 @keyframes circle-in {
   0% {
     transform: rotate(360deg);
@@ -203,4 +202,16 @@
     transform: rotate(0deg);
   }
 
+}
+
+@keyframes arrowPulse {
+  0% {
+    transform: translateY(-10%);
+  }
+  40% {
+    transform: translateY(10%);
+  }
+  100%{
+    transform: translateY(-10%);
+  }
 }

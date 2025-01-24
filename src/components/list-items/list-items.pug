@@ -2,3 +2,10 @@ mixin meetingsListItem (title, image, alt)
     li.meetings__list-item
         p.meetings__item-title= title
         img.meetings__item-img(src= image, alt= alt)
+
+mixin catalogListItem (title, image)
+    li.slider__item(class="card")
+        button.card__btn
+            .card__image-wrapper
+                img.card__image(, src= image, alt= title, draggable="false")
+            p.card__title(class="hover-dark-text")= title
