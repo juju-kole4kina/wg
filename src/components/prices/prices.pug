@@ -1,0 +1,15 @@
+-
+    var priceCardList = [
+        {"title": "“Мини”", "count": "4 игры", "price2hours": "9 900₽", "price6hours": "14 900₽", "extraClass": "mini"},
+        {"title": "“Миди”", "count": "8 игр", "price2hours": "14 900₽", "price6hours": "19 900₽", "extraClass": "midi popular"},
+        {"title": "“Макси”", "count": "12 игр", "price2hours": "19 900₽", "price6hours": "24 900₽", "extraClass": "maxi"}
+    ];
+
+section.main__prices(class="prices section theme_dark")
+    .prices__container(class="container")
+        include ../titles/titles
+        +sectionTitle("prices__title section-title_type_light", "Наши предложения")
+        ul.prices__card-list
+            include ../list-items/list-items
+            each item in priceCardList
+                +priceItem(item.title, item.count, item.price2hours, item.price6hours, item.extraClass)

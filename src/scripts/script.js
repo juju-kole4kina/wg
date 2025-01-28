@@ -3,6 +3,7 @@ const header = document.querySelector('.header');
 
 const wrapper = document.querySelector('.slider');
 const carousel = document.querySelector('.slider__carousel');
+const sliderQuantity = carousel.length;
 const firstCardWidth = document.querySelector('.card').offsetWidth;
 const arrowBtns = document.querySelectorAll('.slider__btn');
 const carouselChildrens = [...carousel.children];
@@ -39,6 +40,7 @@ carousel.classList.remove("no-transition");
 arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         carousel.scrollLeft += btn.id == "prev" ? -firstCardWidth : firstCardWidth;
+
     });
 });
 const dragStart = (e) => {

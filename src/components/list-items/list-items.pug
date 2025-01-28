@@ -9,3 +9,18 @@ mixin catalogListItem (title, image)
             .card__image-wrapper
                 img.card__image(, src= image, alt= title, draggable="false")
             p.card__title(class="hover-dark-text")= title
+
+mixin priceItem (title, count, price2h, price6h, extraClass)
+    li.prices__item(class= extraClass)
+        h3.prices__card-title Пакет
+            span.prices__price-title= title
+        .prices__card-container
+            p.prices__count= count
+            .prices__col-container
+                .prices__col
+                    .prices__hours 2 часа
+                    .prices__price= price2h
+                .prices__col
+                    .prices__hours 6 часов
+                    .prices__price= price6h
+        button.prices__card-btn Заказать
