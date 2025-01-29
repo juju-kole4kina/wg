@@ -1,0 +1,17 @@
+-
+    var deliverySectionContent = [
+        {"image": "./images/icons/delivery-truck.svg", "text": "Доставляем по Калининграду и области*", "alt": "иконка грузовика"},
+        {"image": "./images/icons/cash.svg", "text": "Работаем по предоплате", "alt": "иконка банкнот"},
+        {"image": "./images/icons/card.svg", "text": "Оплата наличными и картой", "alt": "иконка банковской карты"}
+    ];
+
+section.main__delivery(class="delivery section theme_light")
+    .delivery__container(class="container")
+        include ../titles/titles
+        +sectionTitle("delivery__title", "Доставка и оплата")
+        ul.delivery__card-list
+            include ../list-items/list-items
+            each item in deliverySectionContent
+                +deliveryCardItem (item.image, item.text, item.alt)
+
+        p.delivery__footnote *Доставка по городу бесплатна, по области - 30руб/км
