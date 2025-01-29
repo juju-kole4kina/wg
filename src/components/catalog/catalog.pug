@@ -38,13 +38,13 @@ section.main__catalog(class="catalog section theme_light")
         +sectionTitle("catalog__title", "Наши игры")
 
         .catalog__catalog-wrapper(class="slider")
-            button.slider__btn(class="slider__btn_prev" id="prev")
-                span.slider__btn_icon
-            ul.slider__carousel
+            button.slider__btn(class="slider-btn slider-btn_prev" id="prev")
+                span.slider-btn_icon
+            ul.slider__carousel(class="carousel")
                 include ../list-items/list-items
                 each item in catalogListItems
                     +catalogListItem(item.title, item.image)
-            button.slider__btn(class="slider__btn_next" id="next")
-                span.slider__btn_icon
+            button.slider__btn(class="slider-btn slider-btn_next" id="next")
+                span.slider-btn_icon
 
 //TODO: slide is a block with 3 cards

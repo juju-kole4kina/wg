@@ -18,7 +18,7 @@ section.reviews__reviews(class="reviews section theme_dark")
         +sectionTitle("reviews__title", "Что о нас говорят")
 
         .reviews__wrapper(class="slider")
-            ul.reviews__carousel(class="carousel")
+            ul.reviews__carousel(class="carousel autoplay")
                 include ../list-items/list-items
                 each item in reviewsSectionListContent
                     +reviewsCardItem(item.name, item.date, item.text)
