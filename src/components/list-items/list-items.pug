@@ -26,7 +26,7 @@ mixin priceItem (title, count, price2h, price6h, extraClass)
         button.prices__card-btn Заказать
 
 mixin deliveryCardItem (image, text, alt)
-    li.delivery__card(class="card")
+    li.delivery__card
         .delivery__image-container
             img.delivery__card-image(src= image, alt= alt)
         p.delivery__card-text= text

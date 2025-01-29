@@ -24,6 +24,8 @@ function slider(section, apBool) {
 
     const wrapper = section.querySelector('.slider');
     const carousel = wrapper.querySelector('.carousel');
+    const cards = wrapper.querySelectorAll('.card');
+    const cardsQuantity = cards.length;
     const firstCardWidth = wrapper.querySelector('.card').offsetWidth;
     const arrowBtns = wrapper.querySelectorAll('.slider-btn');
     const carouselChildrens = [...carousel.children];
@@ -83,8 +85,8 @@ function slider(section, apBool) {
     }
     const autoPlay = () => {
         if(window.innerWidth < 800 || !isAutoPlay) return; // Return if window is smaller than 800 or isAutoPlay is false
-        // Autoplay the carousel after every 2500 ms
-        timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 3000);
+        // Autoplay the carousel after every 6000 ms
+        timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 6000);
     }
     autoPlay();
     carousel.addEventListener("mousedown", dragStart);
