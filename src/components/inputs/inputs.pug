@@ -1,5 +1,5 @@
-mixin defaultInput (type, name, placeholder, maxLength, minLength, required)
+mixin defaultInput(type, title, name, placeholder, maxLength, minLength, required)
     .form__input-wrapper
-        label.form__label(for= type)= name
-        input.form__input(type= type, name= type, id= type, min= minLength, max= maxLength, required= required)
+        label.form__label(for= type)= title
+        input.form__input(type= type, name= name, id= name, min= minLength, max= maxLength, required= required)
         span.form__input-error

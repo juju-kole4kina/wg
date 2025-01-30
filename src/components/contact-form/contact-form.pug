@@ -1,3 +1,9 @@
+-
+    var formContent = [
+        {"type": "text", "title": "Ваше имя", "name": "name", "placeholder": "Имя", "maxLength": "20", "minLength": "2", "required": "true"},
+        {"type": "tel", "title": "Ваше телефон", "name": "tel", "placeholder": "+7 XXX XXX XX XX", "maxLength": "20", "minLength": "2", "required": "true"}
+    ];
+
 section.main__contact-form(class="contact-form section theme_light")
     .contact-form__container(class="container")
         .contact-form__top
@@ -5,4 +11,14 @@ section.main__contact-form(class="contact-form section theme_light")
             +sectionTitle("contact-form__title", "Оставьте заявку")
 
             p.contact-form__text Оставьте заявку и мы свяжемся с Вами в ближайшее время
-        form.contact-form(class="form")
+        form.contact-form__form(class="form")
+            .form__inputs-container
+                include ../inputs/inputs
+                each item in formContent
+                    +defaultInput(item.type, item.title, item.name, item.placeholder, item.maxLength, item.minLength, item.required)
+
+            include ../btns/btns
+            +defaultBtn("form__btn contact-form__btn", "submit", "Отправить")
+
+            p.contact-form__privacy Нажимая на кнопку, Вы даёте согласие на&nbsp;
+                a.contact-form__privacy-link(class="hover-dark-text" href="#" target="_blank") обработку персональных данных
