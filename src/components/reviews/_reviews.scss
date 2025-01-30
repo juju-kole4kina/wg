@@ -65,3 +65,19 @@
     grid-row-end: 3;
   }
 }
+
+.bullet-paginator {
+  &__bullet {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 1px solid vars.$first-bg;
+    display: flex;
+    gap: 10px;
+    &_active {
+      transform: scale(1.1);
+      background-color: vars.$first-bg;
+      transition: transform .3s ease, background-color .3s ease;
+    }
+  }
+}

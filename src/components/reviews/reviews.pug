@@ -22,4 +22,4 @@ section.reviews__reviews(class="reviews section theme_dark")
                 include ../list-items/list-items
                 each item in reviewsSectionListContent
                     +reviewsCardItem(item.name, item.date, item.text)
-            .reviews__paginator
+            .reviews__paginator(class="paginator bullet-paginator")

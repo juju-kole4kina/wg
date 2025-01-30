@@ -6,6 +6,8 @@
 @use "../components/titles/titles";
 @use "../components/section/section";
 @use "../components/list-items/list-items";
+@use "../components/inputs/inputs";
+@use "../components/btns/btns";
 @use "../components/header/header";
 @use "../components/hero/hero";
 @use "../components/about/about";
@@ -14,5 +16,6 @@
 @use "../components/prices/prices";
 @use "../components/delivery/delivery";
 @use "../components/reviews/reviews";
+@use "../components/contact-form/contact-form";
 @use "../components/footer/footer";
 @use "../components/burger/burger";
