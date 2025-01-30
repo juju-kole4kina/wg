@@ -1,0 +1,15 @@
+@use '../../globals/variables' as vars;
+
+.btn {
+  height: 75px;
+  width: 100%;
+  background: vars.$btn-color;
+  color: vars.$light-text-color;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: transform .7s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
+}
