@@ -1,0 +1,7 @@
+
+
+mixin popup(opened)
+    section.popup(class=opened ? "popup_opened" : "")
+        .popup__container
+            button.popup__close-btn
+            block

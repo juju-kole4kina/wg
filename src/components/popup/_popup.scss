@@ -1,0 +1,44 @@
+@use '../../globals/variables' as vars;
+
+.popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: vars.$overflow-color;
+  color: vars.$dark-text-color;
+  z-index: 10;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  &__container {
+    //width: 500px;
+    //height: 500px;
+    background-color: vars.$first-bg;
+    position: relative;
+    box-shadow: 0 4px 24px rgba( 0, 0, 0, 20%);
+    padding: 40px;
+  }
+  &__close-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    background: url("./images/icons/close-btn.svg") no-repeat center / cover;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: transform .5s ease;
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+  &__title {
+    margin: 0;
+  }
+
+  &_opened {
+    display: flex;
+  }
+}

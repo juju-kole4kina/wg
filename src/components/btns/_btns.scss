@@ -8,8 +8,11 @@
   border: none;
   outline: none;
   cursor: pointer;
-  transition: transform .7s ease;
+  transition: background .3s, color .3s, border .3s ease;
   &:hover {
-    transform: scale(1.05);
+    //transform: scale(1.05);
+    background: vars.$light-text-color;
+    color: vars.$btn-color;
+    border: 1px solid vars.$btn-color;
   }
 }
