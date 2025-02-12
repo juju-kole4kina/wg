@@ -36,3 +36,14 @@ mixin reviewsCardItem (name, date, text)
       p.reviews__name= name
       p.reviews__date= date
       p.reviews__text= text
+
+mixin cartItem(image, name)
+    li.cart__item
+        .cart__item-image-container
+            img.cart__item-image(src= image, alt= name)
+        p.cart__item-title= name
+        .cart__item-btns-container
+            button.cart__item-btn-minus -
+            span.cart__item-quantity 1
+            button.cart__item-btn-plus +
+        button.cart__item-delete-btn

@@ -3,3 +3,8 @@ mixin defaultInput(type, title, name, placeholder, maxLength, minLength, require
         label.form__label(for= type)= title
         input.form__input(type= type, name= name, id= name, min= minLength, max= maxLength, required= required)
         span.form__input-error
+
+mixin radioInput(className, name, title, value)
+    .radio-input__wrapper
+        label.radio-input__label(for= value)= title
+        input.radio-input__input(class= className, type="radio", name= name, value= value, id= value)

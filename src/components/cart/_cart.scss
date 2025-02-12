@@ -1,0 +1,121 @@
+@use '../../globals/variables' as vars;
+
+.cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  gap: 20px;
+  &__title{
+    margin-bottom: 20px;
+  }
+  &__item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    //gap: 50px;
+    justify-content: space-between;
+    width: 100%;
+
+  }
+  &__item-image-container {
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+  }
+  &__item-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__item-title {
+    font-size: 16px;
+    max-width: 130px;
+    width: 100%;
+    margin-right: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    //text-align: center;
+  }
+  &__item-btns-container {
+    display: flex;
+    width: 24px;
+    gap: 8px;
+    margin-right: 10px;
+
+  }
+  &__item-btn-minus,
+  &__item-btn-plus {
+    background: inherit;
+    border: none;
+    color: vars.$dark-text-color;
+    cursor: pointer;
+    &:hover {
+      color: vars.$hover-color;
+      transition: color .5s;
+    }
+  }
+  &__item-quantity {}
+  &__item-btn-plus {}
+  &__item-btn-plus {}
+  &__item-delete-btn {
+    width: 16px;
+    height: 16px;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    background: url("./images/icons/close-btn.svg") no-repeat center / cover;
+    transition: transform .5s ease;
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+  &__rent-time {
+    width: 100%;
+  }
+  &__cart-legind {
+    margin-bottom: 16px;
+  }
+  &__radio-container {
+    width: 100%;
+    display: flex;
+    //gap: 25px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__radio {
+    cursor: pointer;
+  }
+  &__line {
+    width: 100%;
+    height: 2px;
+    background-color: vars.$dark-text-color;;
+  }
+  &__total-price-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 24px;
+  }
+  &__continue-order-btn,
+  &__submit-btn {
+    height: 50px;
+  }
+  &__client-info {
+    border: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__client-legeng {
+    visibility: hidden;
+  }
+}

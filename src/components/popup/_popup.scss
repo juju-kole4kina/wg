@@ -12,13 +12,25 @@
   display: none;
   justify-content: center;
   align-items: center;
+  &_popup-cart {
+    justify-content: start;
+    align-items: start;
+  }
+
   &__container {
     //width: 500px;
     //height: 500px;
     background-color: vars.$first-bg;
     position: relative;
     box-shadow: 0 4px 24px rgba( 0, 0, 0, 20%);
-    padding: 40px;
+    padding: 20px;
+    &_popup-cart {
+      position: absolute;
+      top: 0;
+      right: 0;
+      //width: 320px;
+
+    }
   }
   &__close-btn {
     width: 30px;

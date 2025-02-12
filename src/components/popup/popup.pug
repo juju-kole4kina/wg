@@ -1,7 +1,7 @@
 
 
-mixin popup(opened)
+mixin popup(opened, cart)
     section.popup(class=opened ? "popup_opened" : "")
-        .popup__container
+        .popup__container(class= cart)
             button.popup__close-btn
             block

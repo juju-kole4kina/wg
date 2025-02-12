@@ -1,0 +1,75 @@
+include ../titles/titles
+include ../list-items/list-items
+include ../inputs/inputs
+include ../btns/btns
+
+- var totalPrice = '39 600';
+- var opened = true;
+-
+    var CartListContent = [
+        {"image": "./images/catalog/kornhole.jpg", "title": "Корнхол"},
+        {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
+        {"image": "./images/catalog/balance-tower.jpg", "title": "Башня баланса"},
+        {"image": "./images/catalog/nasharu.jpg", "title": "Нашару"},];
+-
+    var formContent = [
+        {
+            "type": "text",
+            "title": "Ваше имя",
+            "name": "name",
+            "placeholder": "Имя",
+            "maxLength": "20",
+            "minLength": "2",
+            "required": "true"
+        },
+        {
+            "type": "tel",
+            "title": "Ваше телефон",
+            "name": "tel",
+            "placeholder": "+7 XXX XXX XX XX",
+            "maxLength": "20",
+            "minLength": "2",
+            "required": "true"
+        }
+    ];
+
+-
+    var radioInputContent = [
+        {"className": "cart__radio", "name": "hours", "title": "2 часа", "value": "2"},
+        {"className": "cart__radio", "name": "hours", "title": "6 часов", "value": "6"}
+    ];
+
+include ../popup/popup
++popup(opened, "popup__container_popup-cart")
+    form.popup__cart(class="cart")
+        +sectionTitle('cart__title', 'Корзина')
+        ul.cart__item-list
+            each item in CartListContent
+                +cartItem(item.image, item.title)
+
+        filedset.cart__rent-time
+            legend.cart__cart-legind Количество часов
+            .cart__radio-container
+                each item in radioInputContent
+                    +radioInput(item.className, item.name, item.title, item.value)
+
+        span.cart__line
+        .cart__total-price-container
+            p.cart__total-price-title Итого
+            p.cart__total-price= totalPrice
+                span.cart__currency ₽
+
+        +defaultBtn('cart__continue-order-btn', 'button', 'Оформить заказ')
+
+        fieldset.cart__client-info
+            legend.cart__client-legeng Данные заказчика
+            each item in formContent
+                +defaultInput(item.type, item.title, item.name, item.placeholder, item.maxLength, item.minLength, item.required)
+
+        +defaultBtn("cart__submit-btn", 'submit', 'Заказать')
+
+
+
+
+
+
