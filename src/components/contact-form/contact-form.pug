@@ -1,3 +1,7 @@
+include ../titles/titles
+include ../inputs/inputs
+include ../btns/btns
+
 -
     var formContent = [
         {"type": "text", "title": "Ваше имя", "name": "name", "placeholder": "Имя", "maxLength": "20", "minLength": "2", "required": "true"},
@@ -5,19 +9,16 @@
     ];
 
 section.main__contact-form(class="contact-form section theme_light")
-    .contact-form__container(class="container")
+    .contact-form__container(class="container container_1200")
         .contact-form__top
-            include ../titles/titles
             +sectionTitle("contact-form__title", "Оставьте заявку")
 
             p.contact-form__text Оставьте заявку и мы свяжемся с Вами в ближайшее время
         form.contact-form__form(class="form")
             .form__inputs-container
-                include ../inputs/inputs
                 each item in formContent
                     +defaultInput(item.type, item.title, item.name, item.placeholder, item.maxLength, item.minLength, item.required)
 
-            include ../btns/btns
             +defaultBtn("form__btn contact-form__btn", "submit", "Отправить")
 
             p.contact-form__privacy Нажимая на кнопку, Вы даёте согласие на&nbsp;

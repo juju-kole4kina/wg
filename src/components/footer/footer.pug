@@ -1,3 +1,6 @@
+include ../titles/titles
+include ../menu-item/menu-item
+
 -
     var menuContent = [
         {'liClass': 'footer-menu__item', 'linkClass': 'footer-menu__link hover-light-text', 'link': '#', 'content': 'О нас'},
@@ -19,33 +22,27 @@
         {'liClass': 'socials__item', 'linkClass': 'socials__link', 'link': '#', 'imgClass': 'socials__image', 'src': './images/icons/instagram-circle.svg', 'alt': 'Instagram'}
     ]
 footer.footer
-    .footer__container(class='container')
+    .footer__container(class='container container_1440')
         .footer__col
             a.footer__logo
                 img.footer__logo-image(src="./images/icons/logo.svg" alt="Логотип 'Wood Games. Игры из дерева. Калининград'")
             p.footer__copyright © 2024, Wood Games Калининград
         .footer__col
-            include ../titles/titles
             +footerListTitle("footer__col-title", "Разделы")
             ul.footer__menu(class="footer-menu")
-                include ../menu-item/menu-item
                 each item in menuContent
                     +menuItem(item.liClass, item.linkClass, item.link, item.content)
 
         .footer__col
             .footer__row
-                include ../titles/titles
                 +footerListTitle("footer__col-title", "Контакты")
                 ul.footer__contacts(class="contacts")
-                    include ../menu-item/menu-item
                     each item in contactsContent
                         +menuItem(item.liClass, item.linkClass, item.link, item.content)
             .footer__row
-                include ../titles/titles
                 +footerListTitle("footer__col-title", "Мы в социальных сетях")
                 .footer__col-content(class="footer-socials-block")
                     ul.footer-socials-block__socials(class="socials")
-                        include ../menu-item/menu-item
                         each item in socialsContent
                             +listItemWithPic(item.liClass, item.linkClass, item.link, item.imgClass, item.src, item.alt)
                     p.footer-socials-block__socials-footnote *Компания Meta, которой пренадлежит Instagram, признана экстремистской и запрещена на территории РФ

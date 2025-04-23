@@ -1,13 +1,65 @@
 @use './fonts';
+@use "sass:string";
 
+//TEXT
 $title-ff: 'Montserrat Alternates', sans-serif;
 $ff: 'Montserrat', sans-serif;
 $main-title-fs: 150px;
 $section-title-fs: 40px;
+$section-title-lh: 1.25;
+$card-title-fs: 30px;
+$card-title-lh: 1.2;
 $footer-section-title-fs: 24px;
+$btn-fs: 20px;
+$btn-lh: 1.2;
+$text-fs: 18px;
+$text-lh: 1.66;
+
 $text-l-fs: 40px;
 $text-m-fs: 18px;
 $text-s-fs: 16px;
+$text-s-lh: 1.2;
+//ICON FONT
+$icomoon-font-family: "icons" !default;
+$icomoon-font-path: "fonts" !default;
+
+//$icon-arrow-line: unquote('"\\e900"');
+//$icon-card: unquote('"\\e901"');
+//$icon-cash: unquote('"\\e902"');
+//$icon-delivery-truck: unquote('"\\e903"');
+//$icon-done: unquote('"\\e904"');
+//$icon-email: unquote('"\\e905"');
+//$icon-instagram: unquote('"\\e906"');
+//$icon-location: unquote('"\\e907"');
+//$icon-close: unquote('"\\e908"');
+//$icon-light_close: unquote('"\\e909"');
+//$icon-phone: unquote('"\\e90a"');
+//$icon-cart: unquote('"\\e90b"');
+//$icon-telegram: unquote('"\\e90c"');
+//$icon-vk: unquote('"\\e90d"');
+$icon-arrow-line: "\e900";
+$icon-card: "\e901";
+$icon-cash: "\e902";
+$icon-delivery-truck: "\e903";
+$icon-done: "\e904";
+$icon-email: "\e905";
+$icon-instagram: "\e906";
+$icon-location: "\e907";
+$icon-close: "\e908";
+$icon-light_close: "\e909";
+$icon-phone: "\e90a";
+$icon-cart: "\e90b";
+$icon-telegram: "\e90c";
+$icon-vk: "\e90d";
+//SIZES
+$max-w-container: 1440px;
+$m-w-container: 1200px;
+$s-w-container: 1038px;
+//INDENTATIONS
+$lr-container-margin: 80px;
+$tb-container-margin: 60px;
+
+//COLORS
 $title-color: #a0855b;
 $first-bg: #f9f6f2;
 $second-bg: #a0855b;
@@ -17,8 +69,5 @@ $border-color: #814906;
 $btn-color: #a65e09;
 $btn-color-active: #814906;
 $hover-color: #ED9728;
-$overflow-color: #00000099;
+$overflow-color: #000000;
 $error-color: #E83939;
-$max-w-container: 1440px;
-$lr-container-margin: 80px;
-$tb-container-margin: 60px;

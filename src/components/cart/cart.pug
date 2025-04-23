@@ -4,7 +4,7 @@ include ../inputs/inputs
 include ../btns/btns
 
 - var totalPrice = '39 600';
-- var opened = true;
+- var opened = false;
 -
     var CartListContent = [
         {"image": "./images/catalog/kornhole.jpg", "title": "Корнхол"},
@@ -40,7 +40,7 @@ include ../btns/btns
     ];
 
 include ../popup/popup
-+popup(opened, "popup__container_popup-cart")
++popup(opened, "popup__container_popup-cart container_1200")
     form.popup__cart(class="cart")
         +sectionTitle('cart__title', 'Корзина')
         ul.cart__item-list

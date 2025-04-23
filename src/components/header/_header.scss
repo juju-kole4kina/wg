@@ -14,16 +14,18 @@
     align-items: center;
     justify-content: center;
   }
-
+  &__phone-link-container {
+    display: flex;
+  }
   &__phone-link {
     margin: 0 10px 0 0;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    &:before {
-      content: url("./images/icons/phone-fill-header.svg");
-      margin-right: 5px;
-    }
+    //&:before {
+    //  content: url("./images/icons/phone-fill-header.svg");
+    //  margin-right: 5px;
+    //}
   }
 }
 

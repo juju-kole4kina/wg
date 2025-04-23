@@ -1,3 +1,6 @@
+include ../titles/titles
+include ../list-items/list-items
+
 -
     var deliverySectionContent = [
         {"image": "./images/icons/delivery-truck.svg", "text": "Доставляем по Калининграду и области*", "alt": "иконка грузовика"},
@@ -6,11 +9,9 @@
     ];
 
 section.main__delivery(class="delivery section theme_light")
-    .delivery__container(class="container")
-        include ../titles/titles
+    .delivery__container(class="container container_1200")
         +sectionTitle("delivery__title", "Доставка и оплата")
         ul.delivery__card-list
-            include ../list-items/list-items
             each item in deliverySectionContent
                 +deliveryCardItem (item.image, item.text, item.alt)
 

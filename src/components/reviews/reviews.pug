@@ -1,3 +1,6 @@
+include ../titles/titles
+include ../list-items/list-items
+
 -
     var reviewsSectionListContent = [
         {"name": "Алёна", "date": "16.09.2023", "text": "Я недавно воспользовалась услугой аренды настольных игр из дерева. Сервис оказался на высшем уровне, начиная от удобного процесса бронирования и заканчивая доставкой игр прямо к моему порогу."},
@@ -13,13 +16,11 @@
     ];
 
 section.reviews__reviews(class="reviews section theme_dark")
-    .reviews__container(class="container")
-        include ../titles/titles
+    .reviews__container(class="container container_1200")
         +sectionTitle("reviews__title", "Что о нас говорят")
 
         .reviews__wrapper(class="slider")
             ul.reviews__carousel(class="carousel autoplay")
-                include ../list-items/list-items
                 each item in reviewsSectionListContent
                     +reviewsCardItem(item.name, item.date, item.text)
             .reviews__paginator(class="paginator bullet-paginator")

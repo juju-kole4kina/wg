@@ -1,3 +1,6 @@
+include ../titles/titles
+include ../list-items/list-items
+
 -
     var catalogListItems = [
         {"image": "./images/catalog/4inRow.jpg", "title": "4 в ряд"},
@@ -33,15 +36,13 @@
     ];
 
 section.main__catalog(class="catalog section theme_light")
-    .catalog__container(class="container")
-        include ../titles/titles
+    .catalog__container(class="container container_1400")
         +sectionTitle("catalog__title", "Наши игры")
 
         .catalog__catalog-wrapper(class="slider")
             button.slider__btn(class="slider-btn slider-btn_prev" id="prev")
                 span.slider-btn_icon
             ul.slider__carousel(class="carousel")
-                include ../list-items/list-items
                 each item in catalogListItems
                     +catalogListItem(item.title, item.image)
             button.slider__btn(class="slider-btn slider-btn_next" id="next")

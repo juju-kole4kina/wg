@@ -15,12 +15,16 @@
 }
 
 .container {
-  max-width: 1440px;
   width: 100%;
-
   align-items: center;
   position: relative;
   z-index: 2;
+  &_1440 {
+    max-width: 1440px;
+  }
+  &_1200 {
+    max-width: 1200px;
+  }
 }
 
 .main {
@@ -37,6 +41,7 @@
 
 .hover-dark-text,
 .hover-light-text {
+
   transition: color .5s;
   &:after {
     content: '';

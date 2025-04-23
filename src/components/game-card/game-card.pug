@@ -1,3 +1,6 @@
+include ../titles/titles
+include ../btns/btns
+
 - var opened = false;
 - var title = 'Корнхол'
 - var imgMain = './images/catalog/kornhole.jpg';
@@ -5,7 +8,7 @@
 - var img2 = './images/catalog/balance-tower.jpg';
 - var img3 = './images/catalog/nasharu.jpg';
 - var rules = 'Играть можно как 1 на 1, так и командами. Есть 2 базы и 8 мешочков с зерном. Базы распологаются на расстоянии 8-10 метров друг напротив друга. Команды по очереди бросают мешочки на базу соперника, страраясь попасть в отверстие. Игра идёт пока одна из команд не наберёт 21 балл. 0 баллов - за мешок  на земле; 1 балл - за мешок на доске; 3 балла - за мешок, упавший в отверстие.';
- - var equipment = ['2 игровые конструкции', '8 мешочков', '1 таблица с правилами'];
+- var equipment = ['2 игровые конструкции', '8 мешочков', '1 таблица с правилами'];
 
 include ../popup/popup
 +popup(opened)
@@ -20,15 +23,12 @@ include ../popup/popup
             button.game-card__image-container
                 img.game-card__image(src= img3, alt= title)
         .game-card__col
-            include ../titles/titles
             +sectionTitle('game-card__title popup__title', title)
 
-            include ../titles/titles
             +subtitlePopup('game-card__subtitle', 'Правила игры ')
 
             p.game-card__rules= rules
 
-            include ../titles/titles
             +subtitlePopup('game-card__subtitle', 'Комплектация')
 
             ul.game-card__equipment
@@ -36,5 +36,4 @@ include ../popup/popup
                     li.game-card__equipment-item= item
 
             .game-card__bottom
-                include ../btns/btns
                 +defaultBtn('game-card__btn', 'button', 'Добавить')
