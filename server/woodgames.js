@@ -5,6 +5,8 @@ const { pool } = require('./config/db')
 const routerProducts = require('./routers/products')
 const routerOrders = require('./routers/orders')
 
+const serverError = require('./middlewares/serverError')
+
 dotenv.config()
 
 const app = express()
@@ -14,14 +16,6 @@ app.use(express.json())
 
 app.use(routerProducts)
 
-// app.get('/api/health-check', async (req, res) => {
-//     try {
-//         await pool.query('SELECT 1')
-//         res.status(200).send('OK')
-//     } catch(err) {
-//         res.status(500).send('DB connection failed')
-//     }
-// })
 
 pool.query('SELECT NOW()', (err, res) => {
     if(err) {
@@ -31,8 +25,8 @@ pool.query('SELECT NOW()', (err, res) => {
     }
 })
 
-app.get('/', (req, res) => {})
-app.get('/dashboard', (req, res) => {})
+
+app.use(serverError)
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
