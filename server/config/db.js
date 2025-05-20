@@ -1,7 +1,5 @@
 const pg = require('pg')
-const dotenv = require('dotenv')
-
-dotenv.config()
+const dotenv = require('dotenv').config()
 
 const { Pool } = pg
 
